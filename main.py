@@ -35,7 +35,7 @@ while True:
 
         if excedeu_num_saques:
             print("Falha na operação: Você chegou ao limite de saques do dia.")
-            
+
         elif excedeu_valor_saque:
             print("Falha na operação: Valor informado para saque é maior do que o valor disponível na conta.")
 
@@ -51,7 +51,10 @@ while True:
             print("Falha na operação: Valor informado inválido.")
 
     elif opcao.lower() == "e":
-        pass
+        print("\n================ EXTRATO ================")
+        print("Não foram realizadas movimentações." if not extrato else extrato)
+        print(f"\nSaldo: R$ {saldo_conta:.2f}")
+        print("==========================================")
 
     elif opcao.lower() == "q":
         break
