@@ -60,4 +60,4 @@ while True:
         break
 
     else:
-        print("Opção inválida! Selecione uma opção válida!")
+        print("Opção inválida! Selecione uma opção válida para realizar uma operação!")
