@@ -27,7 +27,28 @@ while True:
 
 
     elif opcao.lower() == "s":
-        pass
+        valor_saque = float(input("Informe o valor do saque: R$"))
+
+        excedeu_num_saques = numero_saques >= LIMITE_SAQUES
+        excedeu_valor_saque = valor_saque > limite_valor_saque
+        sem_saldo = valor_saque > saldo_conta
+
+        if excedeu_num_saques:
+            print("Falha na operação: Você chegou ao limite de saques do dia.")
+            
+        elif excedeu_valor_saque:
+            print("Falha na operação: Valor informado para saque é maior do que o valor disponível na conta.")
+
+        elif sem_saldo:
+            print("Falha na operação: Saldo insuficiente na conta.")
+
+        elif valor_saque > 0:
+            saldo_conta -= valor_saque
+            extrato += f"Saque: R${valor_saque:.2f}\n"
+            numero_saques += 1
+
+        else:
+            print("Falha na operação: Valor informado inválido.")
 
     elif opcao.lower() == "e":
         pass
